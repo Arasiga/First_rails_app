@@ -2,10 +2,16 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 
+<%= render 'powers' %>
+
 <% @movies.each do |movie| %>
-  <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+  <%= image_tag movie.image, :class => "style_image" %>
   <h2><%= link_to movie.title, movie_path(movie)%></h2>
   <h3><%= formatted_date(movie.release_date) %></h3>
   <p>By: <%= movie.director %></p>
   <p>Description: <%= movie.description %></p>
 <% end %>
+
+<%= console %>
+
+

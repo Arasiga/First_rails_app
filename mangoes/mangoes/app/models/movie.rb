@@ -1,6 +1,9 @@
 class Movie < ActiveRecord::Base
 
   has_many :reviews
+  has_many :actors
+
+  mount_uploader :image, ImageUploader
 
   validates_presence_of :title
   validates_presence_of :director

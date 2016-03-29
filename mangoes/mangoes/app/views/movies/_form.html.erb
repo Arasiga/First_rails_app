@@ -1,4 +1,4 @@
-<%= form_for @movie do |f| %>
+<%= form_for @movie, :html => {:multipart => true} do |f| %>
 <% if @movie.errors.any? %>
   <div>
       <p> Please fix the following: </p>
@@ -27,7 +27,8 @@
 </div>
 <div>
   <%= f.label :poster_image_url %><br>
-  <%= f.text_field :poster_image_url %>
+  <p> OR UPLOAD YOUR PICTURE </p>
+  <%= f.file_field :image %>
 </div>
 <div>
   <%= f.label :description %><br>
